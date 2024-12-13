@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="crop Recommendation system, yield predction, crop rediction , " />
+    <meta name="description" content="Welcome to Crop Recommendation System to recommend best suitable crop for cultivation." />
+    
+    <!-- Title  -->
+    <title>Crop Recommendation System</title>
+
+    <link rel="stylesheet" href="{% static 'css/auth.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicon icon  -->
+    <link id='favicon' rel="shortcut icon" href="{% static 'images/logo.png'  type="image/x-png %}">
+    <title>Crop Recommendation System</title>
+</head>
+
+<style>
+    .alert-error{
+          background-color: rgb(230, 191, 191);
+        }
+        .alert.success{
+          background-color: rgb(152, 228, 152);
+        }
+       
+</style>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="container-fluid">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="{% url 'CRS:home' %}"><image id="logo" src="{% static 'images/logo.png' %}"></image></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{% url 'CRS:home' %}" class="active-link">Home</a></li>
+               
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'CRS:crop_recomend' %}" class="active-link">Recommend</a></li>
+                {% else %}
+                <li><a href="/login">Recommend</a></li>
+                {% endif%}
+                <li><a href="{% url 'CRS:about' %}" class="active-link">About</a></li>
+                <li><a href="{% url 'CRS:contact' %}" class="active-link">Contact</a></li> 
+                {% if request.user.is_authenticated %}
+                <li>
+                    <i class="fa-solid fa-user usericon" ></i>
+                    <a href="profile" >{{user.first_name}}</a>
+                </li>
+                <a class="button" href="logout" >Logout</a>
+                {% else %}
+                <a class="button" href="login" >Login</a>
+                <a class="button" href="register" >Register</a>
+                {% endif%}
+               
+            </ul>
+            
+           
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+
+
+
+
+
+    {% block content %}
+  
+    {% endblock %}
+
+
+
+
+    
+<!-- =============  FOOTER START ====================== -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box">
+                    <img src="{% static 'images/logo.png' %}" alt="">
+                <p>A crop recommendation system is an agricultural technology that leverages data and machine learning to suggest the most suitable crops for a particular region, improving productivity and sustainability.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box">
+                    <h2>links</h2>
+                <ul>
+                    <li><a href="{% url 'CRS:about' %}">About US</a></li>
+                    <li><a href="{% url 'CRS:contact' %}">Contact US</a></li>
+                    <li><a href="{% url 'CRS:crop_recomend' %}">Crop Recommendation</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Terms & conditions</a></li>
+           
+                </ul>
+                </div>                    
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box">
+                    <h2>Contact US</h2>
+                <ul class="ul">
+                    <li>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Address: 42 Indrapui sector C, Raisen road, Bhopal, pin:462022
+                        </p>
+                        
+                       
+                    <li>
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                            Phone: +919755983112
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                            Email: amansahu47388@gmail.com 
+                        </p>
+                    </li>
+                    
+                </ul>
+                </div>                    
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-box">
+                    <h2>Newsletter</h2>
+                    <p>Subscribe to our newsletter for expert guidance tailored to your agricultural needs!</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Enter your Email ..." aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2"><i class="fa fa-long-arrow-right"></i></span>
+                    </div>
+                    <h2>Follow us on</h2>
+                    <p class="socials">
+                        <a href="https://github.com/dashboard"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/feed/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://x.com/home"><i class="fa-brands fa-x-twitter"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div><hr>
+    </div>
+    <div class="footer-copyright">
+        <p>
+            All Rights Reserved. &copy; 2024 <a>crop Recommendation system</a> Design By: Aman sahu
+        </p>
+    </div>
+</footer>
+
+
+
+
+<!-- ======================   FOOTER END ===================== -->
+  
+
+
+
+     
+
+
+
+
+
+    <script src="{% static 'js/script.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+   
+</body>
+</html>

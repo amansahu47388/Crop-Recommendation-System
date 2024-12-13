@@ -1,0 +1,82 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<div class="main-container">
+    <div class="container-fluid predction">
+        <h2>Crop Yield <span>Production</span></h2><hr>
+        <form action="cyp" method="post" class="form-container">
+            {% csrf_token%}
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>State_Name </label>
+                      <input required type="text" name="state_name" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+    
+                <div class="col form-group col-md-5">
+                    <label>District_Name</label>
+                      <input required type="text" name="district_name" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+
+
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Crop_Year</label>
+                    <input required type="text" name="crop_year" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                <div class="col form-group col-md-5">
+                    <label>Season</label>
+                      <input required type="text" name="season" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+
+
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Crop</label>
+                      <input required type="text"  name="crop" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                <div class="col form-group col-md-5">
+                    <label>Area</label>
+                      <input required type="text" name="area" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                
+            </div> <!-- form-row end.// -->
+            <!-- <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Fertilizer (in kg/h)</label>
+                      <input required type="text" name="fertilizer" class="form-control" placeholder="">
+                </div>
+                <div class=" form-group col-md-5">
+                    <label>Pesticide (in kg/h)</label>
+                      <input required type="text"  name="pesticide" class="form-control" placeholder="">
+                </div> 
+            </div>  -->
+    
+            <div class="form-row">
+                <div class=" form-group col-md-5">
+                    <input required  type="submit" name="submit" value="Predict Yield" class="predict">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+        </form>
+    </div>
+    {% if result %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title">Total Yield Production</h4>
+          <p class="card-text">{{result}}</p>
+        </div>
+      </div>
+      {% endif %}
+</div>
+
+
+
+
+
+
+
+{% endblock %}

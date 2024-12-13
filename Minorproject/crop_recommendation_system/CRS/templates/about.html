@@ -1,0 +1,31 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+{% block content %}
+<div class="about-section">
+    <!-- <div class="container"> -->
+        <div class="content-section col-8">
+            <div class="about-title">
+                <h1>About Us</h1>
+            </div>
+            <div class="content">
+                <h3>A crop recommendation system is an agricultural technology that leverages data and machine learning to suggest the most suitable crops for a particular region, improving productivity and sustainability. These systems analyze various factors such as soil type, moisture levels, pH, climate conditions, and past crop performance to provide recommendations.</h3>
+                <div class="button">
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+            <div class="social">
+                <a href="https://github.com/dashboard"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/feed/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://x.com/home"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="image-section">
+            <image src="{% static 'images/about.jpg'%}"></image>
+        </div>
+    <!-- </div> -->
+</div>
+
+{% endblock %}

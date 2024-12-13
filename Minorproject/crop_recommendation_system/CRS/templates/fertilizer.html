@@ -1,0 +1,82 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<div class="main-container">
+    <div class="container-fluid predction">
+        <h2>Fertilizer </h2> <span>Recommendation</span></h2><hr>
+        <form action="frs" method="post" class="form-container">
+            {% csrf_token%}
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Temparature</label>
+                      <input required type="text" name="temparature" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+    
+                <div class="col form-group col-md-5">
+                    <label>Humidity</label>
+                      <input required type="text" name="humidity" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+
+
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Moisture</label>
+                    <input required type="text" name="moisture" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                <div class="col form-group col-md-5">
+                    <label>Soil_Type</label>
+                      <input required type="text" name="soil_type" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+
+
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Crop_Type</label>
+                      <input required type="text"  name="crop_type" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                <div class="col form-group col-md-5">
+                    <label>Nitrogen</label>
+                      <input required type="text" name="nitrogen" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                
+            </div> <!-- form-row end.// -->
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Potassium</label>
+                      <input required type="text" name="potassium" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+                <div class=" form-group col-md-5">
+                    <label>Phosphorous</label>
+                      <input required type="text"  name="phosphorous" class="form-control" placeholder="">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+    
+            <div class="form-row">
+                <div class=" form-group col-md-5">
+                    <input required  type="submit" name="submit" value="Recommend Fertilizer" class="predict">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+        </form>
+    </div>
+    {% if result %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title">Recommend fertilizer is :</h4>
+          <p class="card-text">{{result}}</p>
+        </div>
+      </div>
+      {% endif %}
+</div>
+
+
+
+
+
+
+
+{% endblock %}

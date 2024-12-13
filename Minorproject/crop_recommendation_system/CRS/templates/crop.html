@@ -1,0 +1,75 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+
+{% block content %}
+<div class="main-container">
+    <div class="container-fluid predction">
+        <h2>Crop Recommendation <span>System</span></h2><hr>
+        <form action="crs" method="post" class="form-container">
+            {% csrf_token%}
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Nitrogen in soil</label>
+                      <input required type="text" name="Nitrogen" class="form-control" placeholder="Enter Nitrogen ratio in soil :">
+                </div> <!-- form-group end.// -->
+    
+                <div class="col form-group col-md-5">
+                    <label>Phosphorous in soil</label>
+                      <input required type="text" name="Phosphorous" class="form-control" placeholder="Enter Phosphorous ratio in soil :">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Potassium in soil</label>
+                      <input required type="text" name="Potassium" class="form-control" placeholder="Enter Potassium ratio in soil">
+                </div> <!-- form-group end.// -->
+    
+                <div class="col form-group col-md-5">
+                    <label>Temperature (in &deg;C)</label>
+                      <input required type="text" step="0.01" name="Temperature" class="form-control" placeholder="Enter average Temperature :">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-row">
+                <div class="col form-group col-md-5">
+                    <label>Humidity</label>
+                      <input required type="text" step="0.01" name="Humidity" class="form-control" placeholder="Enter Humidity value :">
+                </div> <!-- form-group end.// -->
+    
+                <div class="col form-group col-md-5">
+                    <label>pH value of soil</label>
+                      <input required type="text" step="0.01" name="pH" class="form-control" placeholder="Enter pH value of soil :">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+            <div class="form-row">
+                <div class=" form-group col-md-5">
+                    <label>Rainfall (in mm)</label>
+                      <input required type="text" step="0.01" name="Rainfall" class="form-control" placeholder="Enter rainfall in mm :">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+    
+            <div class="form-row">
+                <div class=" form-group col-md-5">
+                    <input required  type="submit" name="submit" value="Recommend Crop" class="predict">
+                </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+        </form>
+    </div>
+    {% if result %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h4 class="card-title">Recommended Crop</h4>
+          <p class="card-text">{{result}}</p>
+        </div>
+      </div>
+      {% endif %}
+</div>
+
+
+
+
+
+
+
+{% endblock %}

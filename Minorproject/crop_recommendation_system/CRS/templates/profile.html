@@ -1,0 +1,95 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+{% block content %}
+
+{% for message in messages %}
+      <div id="message" >
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+           {{message}}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+      {% endfor %}
+
+<div class="profile-container">
+    <div class=" light-style flex-grow-1 container-p-y">
+        <h3 class="font-weight-bold py-3 mb-4">
+            Account settings
+        </h3>
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active"  data-toggle="list"
+                            href="{% url 'CRS:profile' %}">Profile</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="{% url 'CRS:passwordupdate' %}">Change password</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="{% url 'CRS:logout' %}">
+                        Logout</a>
+                       
+                       
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-general">
+                            <div class="card-body media ">
+                                {% if user.image %}
+                                <img src="{{user.image.url}}" alt="" class="d-block ui-w-80">
+                                {% else %}
+                                <img src="" alt="" class="d-block ui-w-80">
+                                {% endif %}
+
+                               
+                            
+                                <div class="media-body ">
+                    
+                                    <a href="{% url 'CRS:profileupdate' user.id %}" class="btn btn-outline-success">
+                                        <i class="fa-solid fa-user-pen"></i>
+                                        Edit Profile
+                                    </a> &nbsp;
+
+                                </div>
+                            </div>
+                         
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input disabled class="form-control " value="{{ user.first_name }}" name="fname">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input disabled class="form-control" value="{{user.last_name}}" name="lname">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone number</label>
+                                    <input disabled class="form-control" value="{{user.phone}}">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input disabled class="form-control mb-1" value="{{user.email}}">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label>
+                                    <input disabled class="form-control" value="{{user.gender}}" name="gender">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

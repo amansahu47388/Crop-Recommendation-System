@@ -1,0 +1,96 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="profile-container">
+    <div class=" light-style flex-grow-1 container-p-y">
+        <h3 class="font-weight-bold py-3 mb-4">
+            Account settings
+        </h3>
+        <div class="card overflow-hidden">
+            <div class="row no-gutters row-bordered row-border-light">
+                <div class="col-md-3 pt-0">
+                    <div class="list-group list-group-flush account-settings-links">
+                        <a class="list-group-item list-group-item-action active"  data-toggle="list"
+                            href="{% url 'CRS:profile' %}">Profile</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="{% url 'CRS:passwordupdate' %}">Change password</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="{% url 'CRS:logout' %}">
+                        Logout</a>
+                       
+                       
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <div class="tab-pane fade active show" id="account-general">
+                           
+        
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                            <form action="/profileupdate/{{user.id}}/" method="post" enctype="multipart/form-data"> 
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control " value="{{ user.first_name }}"  name="fname">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" value="{{user.last_name}}"  name="lname">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone number</label>
+                                    <input type="text" class="form-control"  value="{{user.phone}}" name="phone">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">E-mail</label>
+                                    <input  class="form-control"  value="{{user.email}}" name="email">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Gender</label>
+                                    <input type="text" class="form-control" value="{{user.gender}}"  name="gender">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Profile image</label>
+                                    <input type="file" class="form-control"   name="image">
+                                </div>
+                                <input type="submit" class="btn btn-success Update-profile " value="Save Changes">
+                               
+                            </form>    
+                            </div>
+
+
+                        </div>
+                        <div class="tab-pane fade" id="account-change-password">
+                            <div class="card-body pb-2">
+                                <div class="form-group">
+                                    <label class="form-label">Current password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Repeat new password</label>
+                                    <input type="password" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,211 @@
+{% extends 'main.html'%}
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- ================= CROUSEL ============================ -->
+{% for message in messages %}
+<div id="message" >
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">{{message}}
+    <!-- <strong></strong>  -->
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+{% endfor %}
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/1.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block crousel-heading">
+           
+              <h1>Welcome To Crop Recommendation System</h1>
+              <p>Advising For Crop Cultivation Using Machine Learning </p>
+            
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/2.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>Welcome To Crop Recommendation System</h1>
+            <p>Advising For Crop Cultivation Using Machine Learning </p>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/3.jpg'%}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h1>Welcome To Crop Recommendation System</h1>
+            <p>Advising For Crop Cultivation Using Machine Learning </p>
+          </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+<!-- ========================== SERVICES ====================== -->
+  <div class="services">
+    <div class="container-fluid">
+      <h1 class="text-center mt-5 display-5 fw-bold">Our Mission</h1>
+      <hr class="mx-auto mb-5 w-50 btn-success">
+      <div class="row mb-5">
+          <div class="col-12 col-sm-6 col-md-3 m-auto ">
+              <!-- card starts here -->
+              <div class="service-card shadow">
+                  <img src="{% static 'images/crop recommend.jpg'%}" alt="" class="service-card-img-top">
+                  <div class="service-card-body">
+                      <h3 class="text-center">Recommended Crop</h3>  
+                      <p>
+                       Recommendation about the type of crops to be cultivated. you can enter details to find out best suitable crop for farm.
+                      </p>
+                      <!-- <a class="btn btn-success service-btn"  href="">Recommend Now</a> -->
+                  </div>
+              </div>
+              <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+          <div class="col-12 col-sm-6 col-md-3 m-auto">
+              <!-- card starts here -->
+              <div class="service-card shadow">
+                  <img src="{% static 'images/crop yield.png'%}" alt="" class="service-card-img-top">
+                  <div class="service-card-body">
+                      <h3 class="text-center">Enhance Productivity</h3>                  
+                      <p>
+                        Maximize agricultural output by recommending the most suitable crops based on local soil fertility, weather patterns, and water availability.
+                      </p>
+                      <!-- <a class="btn btn-success service-btn"  href="">Predict Now</a> -->
+                  </div>
+              </div>
+              <!-- card ends here -->
+          </div>
+          <!-- col ends here -->
+          <div class="col-12 col-sm-6 col-md-3 m-auto">
+              <!-- card starts here -->
+              <div class="service-card shadow">
+                  <img src="{% static 'images/fertilizer.png' %}" alt="" class="service-card-img-top">
+                  <div class="service-card-body">
+                      <h3 class="text-center">Support Economic Growth</h3>
+                     
+                      <p>
+                        Boost farmers' income by aligning crop choices with current market trends and demands to ensure profitable yields.
+                      </p>
+                      <!-- <a class="btn btn-success service-btn"  href="">Recommend Now</a> -->
+
+                  </div>
+              </div>
+              <!-- card ends here -->
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- ========================== TEAM =========================== -->
+
+ <div class="services">
+  <div class="container-fluid">
+    <h1 class="text-center mt-5 display-5 fw-bold">Our Team</h1>
+    <hr class="mx-auto mb-5 w-50 btn-success">
+    <div class="row mb-5 ">
+        <div class="col-12 col-sm-6 col-md-3 m-auto">
+            <!-- card starts here -->
+            <div class="team-card shadow">
+              <div class="img-container">
+                <img src="{% static 'images/aman.jpg'%}" />
+              </div>
+              <div class="team-content">
+              <h3>Aman Sahu</h3>
+              <p>Developer</p>
+              <div class="socials">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+            <!-- card ends here -->
+        </div>
+        <!-- col ends here -->
+        <div class="col-12 col-sm-6 col-md-3 m-auto">
+            <!-- card starts here -->
+            <div class="team-card shadow">
+              <div class="img-container">
+                <img src="{% static 'images/shyam.jpg'%}" />
+              </div>
+              <div class="team-content">
+              <h3>Shyam sahu</h3>
+              <p>Developer</p>
+              <div class="icon">
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="#">
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+            <!-- card ends here -->
+        </div>
+        <!-- col ends here -->
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="container">
+  <div class="contact-box">
+      <div class="left">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d7331.471511155325!2d77.46609653914794!3d23.25270091333701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1728210164251!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="right">
+          <h2>Contact Us</h2><hr>
+          <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="35ea8ce1-914c-44e7-b6d9-1ec1621a239c">
+              <input type="text" name="name" required placeholder="Name" class="contact-form-txt">
+              <input type="text" name="email" required placeholder="Email" class="contact-form-txt">
+              <input type="text" name="phone" required placeholder="Phone Number" class="contact-form-txt">
+              <textarea name="message" placeholder="Message" class="contact-form-txtarea"></textarea>
+              <input type="submit" class="contact-form-btn">
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

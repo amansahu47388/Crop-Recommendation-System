@@ -1,0 +1,271 @@
+
+
+/*=============== REGISTRATION PAGE START =======================*/
+
+.register-section{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: auto;
+
+}
+
+.register-form-title{
+    color: #28a745;
+    /* line-height: 20px; */
+    border-bottom: 3px solid orange;
+}
+
+
+
+.register-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    padding: 25px;
+    margin:   50px 0 100px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #666;
+    border-radius: 5px;
+}
+
+.register-main-user-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.register-user-input-box:nth-child(2n){
+    justify-content: end;
+}
+
+.register-user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    padding-bottom: 15px;
+}
+
+.register-user-input-box label{
+    width: 95%;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.register-user-input-box input{
+    height: 40px;
+    width: 95%;
+    border-radius: 5;
+    outline: none;
+    border: 1px solid #bcbcbc;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.register-gender-title{
+    color:rgb(0, 0, 0);
+    font-size: 20px;
+    font-weight: 500;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.register-gender-category{
+    margin: 15px 0;
+    color: rgb(0, 0, 0);
+}
+
+.register-gender-category label{
+    padding: 0 20px 0 5px;
+}
+
+.register-gender-category label,
+.register-gender-category input,
+.register-form-submit-btn input{
+    cursor: pointer;
+}
+
+.register-form-submit-btn{
+    margin-top: 40px;
+}
+
+.register-form-submit-btn input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border:none;
+    border-radius: 3px;
+    color: rgb(209, 209, 209);
+    background: #28a745;
+}
+
+.register-form-submit-btn input:hover{
+    background: orange;
+    color: rgb(255, 255, 255);
+}
+
+@media(max-width: 600px){
+    .register-container{
+        min-width: 280px;
+    }
+
+    .register-user-input-box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .register-user-input-box:nth-child(2n){
+        justify-content: space-between;
+    }
+
+    .register-gender-category{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .register-main-user-info{
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .register-main-user-info::-webkit-scrollbar{
+        width: 0;
+    }
+}
+.have-account{
+    line-height: 50px;
+    color: #2d2d2d;
+}
+.have-account a{
+    color: #28a745;
+   
+}
+/* .alert-error{
+    background-color: rgb(191, 139, 139);
+}
+.alert.success{
+    background-color: rgb(106, 178, 106);
+} */
+
+/*===============  REGISTRATION PAGE END =========================*/
+
+
+
+
+/*=============== LOGIN PAGE START ===========================*/
+
+.login-section{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-height: auto;
+
+}
+
+.login-form-title{
+    color: #28a745;
+    /* line-height: 20px; */
+    border-bottom: 3px solid orange;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 25px;
+    margin:   50px 0 100px 0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #666;
+    border-radius: 5px;
+}
+
+
+.login-user-input-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+.login-user-input-box label{
+    width: 95%;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 400;
+    margin: 5px 0;
+}
+
+.login-user-input-box input{
+    height: 40px;
+    width: 95%;
+    border-radius: 5;
+    outline: none;
+    border: 1px solid #bcbcbc;
+    padding: 0 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.login-form-submit-btn{
+    margin-top: 40px;
+}
+
+.login-form-submit-btn input{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px;
+    padding: 10px;
+    border:none;
+    border-radius: 3px;
+    color: rgb(209, 209, 209);
+    background:#28a745;
+}
+
+.login-form-submit-btn input:hover{
+    background: orange;
+    color: rgb(255, 255, 255);
+}
+
+@media(max-width: 600px){
+    .login-container{
+        min-width: 280px;
+    }
+
+    .login-user-input-box{
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .login-main-user-info{
+        max-height: 380px;
+        overflow: auto;
+    }
+
+    .login-main-user-info::-webkit-scrollbar{
+        width: 0;
+    }
+} 
+
+  .alert{
+    text-align: center;
+}
+/* ===================== LOGIN PAGE END ==========================*/
+
+
+
+
+
+
+
+
+
