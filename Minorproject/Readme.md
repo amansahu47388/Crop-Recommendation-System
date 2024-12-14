@@ -1,10 +1,13 @@
+#### Crop Recommendation System
 
 ## Project Requirements
 
 ```
-Python 3.10 or above
-git bash CLI
-Visual Studio Code - Code Editor
+8 GB RAM   <br>
+Code Editor VSCode / Pycharm   <br>
+Git CLI<br>
+Web Browser Chrome / Edge   <br>
+python 3.12.4   <br>
 
 ```
 
@@ -77,3 +80,33 @@ password - `   amansahu9755                  `<br>
 python manage.py createsuperuser
 ```
 
+##### Setup Environment Variables in `.env` file under `Crop_recommendation_system/`
+```
+# django settings
+DEBUG_MODE = TRUE
+ALLOWED_HOSTS = 'localhost:8000 127.0.0.1:8000 '
+SECRET_KEY = ''
+```
+
+
+##### Run the Project
+```
+cd .\crop_recommendation_system\
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+
+#### Update the Code
+- `Reach the crop_recommendation_system directory first`<br>
+
+```
+git pull
+.\env\Scripts\activate
+pip install -r requirements.txt
+cd .\crop_recommendation_system\
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
