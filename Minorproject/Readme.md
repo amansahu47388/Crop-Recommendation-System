@@ -72,7 +72,7 @@ python manage.py runserver
 #### Admin Credentials to login in Django Admin Panel
 
 username - `   amansahu47388@gmail.com       `<br>
-password - `   amansahu9755                  `<br>
+password - `   Aman@9755                  `<br>
 
 ###### Create new admin by following command
 
